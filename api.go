@@ -17,7 +17,7 @@ func NewApiServer(svc Service) *ApiServer {
 }
 
 func (s *ApiServer) Start(listenAddr string) error {
-	http.HandleFunc("/", s.handleGetCatFact)
+	http.HandleFunc("/fact", s.handleGetCatFact)
 	return http.ListenAndServe(listenAddr, nil)
 }
 
